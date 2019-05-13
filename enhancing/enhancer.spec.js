@@ -20,7 +20,16 @@ it('tests MVP conditions for failure', () =>{
     //over 15 enhancenment test (if greater than 15 -10 durability)
     expect(fail(16).enhancement).toBe(16) && fail(16).durability.toBe(6);
 
-    //If the item's enhancement level is greater than 16, the enhancement 
-    //level decreases by 1 (17 goes down to 16, 18 goes down to 17).
+    //If the item's enhancement level is greater than 16, the enhancement level decreases by 1
     expect(fail(18).enhancement).toBe(17)
+})
+
+//Success Test
+it('tests MVP conditions for failure', () =>{
+    //if enhancement is <20 increase by 1
+    expect(succeed(2).enhancement).toBe(3);
+    expect(succeed(19).enhancement).toBe(20);
+    // //if enhancement is 20, level is not changed
+    expect(succeed(20).enhancement).toBe(20);
+ 
 })
